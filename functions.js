@@ -332,14 +332,14 @@ letterGrade();
  var incrementReviews = function(object){
   if(object.hasOwnProperty("reviews")){
     object.reviews+=1;
-    return object.reviews;
+    return object;
   }else{
     object.reviews = 1;
-    return object.reviews;
+    return object;
   }
  };
  incrementReviews(restaurant);
- console.log(restaurant.reviews);
+ console.log(restaurant);
 
 /**
  * Joins two strings with a space.
@@ -347,7 +347,17 @@ letterGrade();
  * @param {string} word2
  * @return {string} joined the words joined with a space
  */
-
+var stringOne = "This is a string";
+var stringTwo = "This is another string";
+var brandNewString;
+var combine = function(word1, word2){
+  if(typeof word1 === "string" && typeof word2 === "string"){
+    brandNewString = word1 + " " + word2;
+    return brandNewString;
+  }
+};
+combine(stringOne,stringTwo);
+console.log(brandNewString);
 
 /**
  * Returns a circle object with the properties `circumference` and `area`.
@@ -357,3 +367,13 @@ letterGrade();
  * @return {object} circle
  */
 
+var createCircle = function(radius){
+  if(typeof radius === "number"){
+    var circle = new Object({});
+    circle.circumference = 2*Math.PI*radius;
+    circle.area = Math.PI*radius*radius;
+    console.log(circle);
+    return circle;
+  }
+};
+createCircle(10);
